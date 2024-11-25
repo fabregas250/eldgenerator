@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 0 0% 100%;
+  }
+}
+
+body {
+  @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors;
+}
+
+/* Add smooth transitions for dark mode changes */
+* {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
+}
+
+/* Hide scrollbar but keep functionality */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari and Opera */
+} 
+
+/* FullCalendar Custom Styles */
+.fc {
+  --fc-border-color: theme('colors.gray.200');
+  --fc-button-bg-color: theme('colors.white');
+  --fc-button-border-color: theme('colors.gray.300');
+  --fc-button-text-color: theme('colors.gray.700');
+  --fc-button-hover-bg-color: theme('colors.gray.100');
+  --fc-button-hover-border-color: theme('colors.gray.400');
+  --fc-button-active-bg-color: theme('colors.blue.600');
+  --fc-button-active-border-color: theme('colors.blue.700');
+  --fc-event-bg-color: theme('colors.blue.600');
+  --fc-event-border-color: theme('colors.blue.700');
+  --fc-event-text-color: theme('colors.white');
+  --fc-today-bg-color: theme('colors.blue.50');
+}
+
+.dark .fc {
+  --fc-border-color: theme('colors.gray.700');
+  --fc-button-bg-color: theme('colors.gray.800');
+  --fc-button-border-color: theme('colors.gray.600');
+  --fc-button-text-color: theme('colors.gray.300');
+  --fc-button-hover-bg-color: theme('colors.gray.700');
+  --fc-button-hover-border-color: theme('colors.gray.500');
+  --fc-page-bg-color: theme('colors.gray.900');
+  --fc-today-bg-color: theme('colors.gray.800');
+}
+
+.fc .fc-button {
+  @apply font-medium text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500;
+}
+
+.fc .fc-button-primary:not(:disabled).fc-button-active,
+.fc .fc-button-primary:not(:disabled):active {
+  @apply bg-blue-600 border-blue-700 text-white;
+}
+
+.fc .fc-daygrid-day.fc-day-today {
+  @apply bg-blue-50 dark:bg-gray-800;
+}
+
+.fc .fc-list-event:hover td {
+  @apply bg-gray-50 dark:bg-gray-800;
+}
+
+.fc-theme-standard .fc-list-day-cushion {
+  @apply bg-gray-50 dark:bg-gray-800;
+}
+
+/* CKEditor Styles */
+.ck-editor__editable {
+  min-height: 200px !important;
+  max-height: 400px;
+}
+
+.ck.ck-editor__editable {
+  background-color: white !important;
+  color: black !important;
+}
+
+.dark .ck.ck-editor__editable {
+  background-color: rgb(31, 41, 55) !important;
+  color: white !important;
+}
+
+.ck.ck-toolbar {
+  background-color: rgb(243, 244, 246) !important;
+  border-color: rgb(229, 231, 235) !important;
+}
+
+.dark .ck.ck-toolbar {
+  background-color: rgb(55, 65, 81) !important;
+  border-color: rgb(75, 85, 99) !important;
+}
+
+.ck.ck-button {
+  color: rgb(55, 65, 81) !important;
+}
+
+.dark .ck.ck-button {
+  color: rgb(209, 213, 219) !important;
+}
+
+.ck.ck-button.ck-on {
+  background-color: rgb(219, 234, 254) !important;
+}
+
+.dark .ck.ck-button.ck-on {
+  background-color: rgb(30, 58, 138) !important;
+}
+
+.ck.ck-toolbar .ck.ck-toolbar__separator {
+  background-color: rgb(229, 231, 235) !important;
+}
+
+.dark .ck.ck-toolbar .ck.ck-toolbar__separator {
+  background-color: rgb(75, 85, 99) !important;
+} 
