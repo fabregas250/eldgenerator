@@ -1,0 +1,57 @@
+.map-picker-container {
+  position: relative;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 2px solid var(--border);
+}
+
+.leaflet-picker-wrapper {
+  width: 100%;
+  height: 300px;
+  background: var(--gray-lighter);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.map-picker-controls {
+  padding: 1rem;
+  background: var(--background);
+  border-top: 1px solid var(--border);
+}
+
+.coordinates-input-group {
+  margin-bottom: 0.75rem;
+}
+
+.coordinates-input-group label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.coordinates-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 0.9375rem;
+  font-family: 'Poppins', sans-serif;
+  transition: var(--transition);
+  background: var(--white);
+}
+
+.coordinates-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+}
+
+.map-help-text {
+  display: block;
+  color: var(--text-secondary);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
