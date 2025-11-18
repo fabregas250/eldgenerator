@@ -1,0 +1,331 @@
+.log-sheet-viewer-container {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.log-sheet-viewer-container h2 {
+  margin-bottom: 1.5rem;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.log-sheet-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #e5e7eb;
+  flex-wrap: wrap;
+}
+
+.log-tab {
+  padding: 0.75rem 1.5rem;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #666;
+  transition: all 0.2s;
+}
+
+.log-tab:hover {
+  color: #667eea;
+  background: #f5f5f5;
+}
+
+.log-tab.active {
+  color: #667eea;
+  border-bottom-color: #667eea;
+}
+
+.log-sheet {
+  border: 2px solid #333;
+  border-radius: 4px;
+  padding: 1.5rem;
+  background: white;
+}
+
+.log-sheet-header {
+  margin-bottom: 1.5rem;
+}
+
+.log-sheet-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.log-sheet-title h3 {
+  font-size: 1.25rem;
+  margin: 0;
+  color: #333;
+}
+
+.log-sheet-date {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.log-sheet-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: #f9fafb;
+  border-radius: 4px;
+}
+
+.info-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.info-row label {
+  font-weight: 500;
+  color: #555;
+}
+
+.info-row span {
+  color: #333;
+}
+
+.log-sheet-grid {
+  border: 2px solid #333;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.grid-header {
+  display: flex;
+  border-bottom: 2px solid #333;
+  background: #f9fafb;
+}
+
+.grid-header-label {
+  width: 200px;
+  padding: 0.5rem;
+  font-weight: 600;
+  border-right: 2px solid #333;
+}
+
+.grid-header-hours {
+  display: flex;
+  flex: 1;
+}
+
+.hour-label {
+  flex: 1;
+  text-align: center;
+  padding: 0.5rem 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-right: 1px solid #333;
+}
+
+.hour-label:last-child {
+  border-right: none;
+}
+
+.grid-row {
+  display: flex;
+  border-bottom: 1px solid #333;
+}
+
+.grid-row:last-child {
+  border-bottom: none;
+}
+
+.grid-row-label {
+  width: 200px;
+  padding: 0.75rem;
+  font-size: 0.9rem;
+  border-right: 2px solid #333;
+  background: #f9fafb;
+  display: flex;
+  align-items: center;
+}
+
+.grid-row-content {
+  display: flex;
+  flex: 1;
+}
+
+.hour-column {
+  flex: 1;
+  display: flex;
+  border-right: 1px solid #333;
+}
+
+.hour-column:last-child {
+  border-right: none;
+}
+
+.time-cell {
+  flex: 1;
+  min-height: 40px;
+  border-right: 1px solid #e5e7eb;
+  transition: background-color 0.2s;
+  cursor: help;
+}
+
+.log-sheet-totals {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: #f9fafb;
+  border-radius: 4px;
+}
+
+.log-sheet-totals h4 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.totals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.total-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.total-item.total {
+  font-weight: 600;
+  border-top: 2px solid #333;
+  border-bottom: 2px solid #333;
+  margin-top: 0.5rem;
+  padding-top: 0.75rem;
+}
+
+.total-item label {
+  color: #555;
+}
+
+.total-item span {
+  font-weight: 600;
+  color: #333;
+}
+
+.log-sheet-remarks {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: #f9fafb;
+  border-radius: 4px;
+}
+
+.log-sheet-remarks h4 {
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.remarks-content {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.log-sheet-recap {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: #f9fafb;
+  border-radius: 4px;
+}
+
+.log-sheet-recap h4 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.recap-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.recap-section {
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  padding: 1rem;
+  background: white;
+}
+
+.recap-section h5 {
+  margin-bottom: 1rem;
+  color: #667eea;
+  font-size: 1rem;
+}
+
+.recap-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.recap-item:last-child {
+  border-bottom: none;
+}
+
+.recap-item label {
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.recap-item span {
+  font-weight: 600;
+  color: #333;
+}
+
+.log-sheet-actions {
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+@media print {
+  .log-sheet-viewer-container {
+    box-shadow: none;
+    padding: 0;
+  }
+  
+  .log-sheet-tabs {
+    display: none;
+  }
+  
+  .log-sheet-actions {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .log-sheet-viewer-container {
+    padding: 1.5rem;
+  }
+  
+  .grid-header-label,
+  .grid-row-label {
+    width: 150px;
+    font-size: 0.8rem;
+  }
+  
+  .hour-label {
+    font-size: 0.65rem;
+    padding: 0.5rem 0.1rem;
+  }
+  
+  .time-cell {
+    min-height: 30px;
+  }
+}
+
