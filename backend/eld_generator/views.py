@@ -20,7 +20,12 @@ from .services.log_generator import generate_daily_logs
 def calculate_route_view(request):
     # Handle CORS preflight OPTIONS request
     if request.method == 'OPTIONS':
-        return Response(status=status.HTTP_200_OK)
+        response = Response(status=status.HTTP_200_OK)
+        response['Access-Control-Allow-Origin'] = '*'
+        response['Access-Control-Allow-Methods'] = 'POST, OPTIONS'
+        response['Access-Control-Allow-Headers'] = 'Content-Type, Authorization, X-Requested-With, Accept'
+        response['Access-Control-Max-Age'] = '86400'
+        return response
     
     serializer = TripRequestSerializer(data=request.data)
     
