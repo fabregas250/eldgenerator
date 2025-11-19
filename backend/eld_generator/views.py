@@ -14,7 +14,7 @@ from .services.eld_calculator import calculate_eld_entries
 from .services.log_generator import generate_daily_logs
 
 
-@api_view(['POST'])
+@api_view(['POST', 'OPTIONS'])
 @permission_classes([AllowAny])
 @csrf_exempt
 def calculate_route_view(request):
