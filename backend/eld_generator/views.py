@@ -18,6 +18,10 @@ from .services.log_generator import generate_daily_logs
 @permission_classes([AllowAny])
 @csrf_exempt
 def calculate_route_view(request):
+    # Handle CORS preflight OPTIONS request
+    if request.method == 'OPTIONS':
+        return Response(status=status.HTTP_200_OK)
+    
     serializer = TripRequestSerializer(data=request.data)
     
     if not serializer.is_valid():
