@@ -240,7 +240,7 @@ function TripInputForm({ onSubmit, loading }) {
             {activeMap === 'pickup' && (
               <div className="map-picker-wrapper">
                 <TripMapPicker
-                  center={pickupCoords ? { lat: pickupCoords[0] || pickupCoords.lat, lng: pickupCoords[1] || pickupCoords.lng } : null}
+                  center={pickupCoords ? { lat: pickupCoords[0] || pickupCoords.lat, lng: pickupCoords[1] || pickupCoords.lng } : (currentLocationCoords || null)}
                   onLocationSelect={(lat, lng) => {
                     handleMapClick('pickup', lat, lng)
                     setActiveMap(null)
@@ -289,7 +289,7 @@ function TripInputForm({ onSubmit, loading }) {
             {activeMap === 'dropoff' && (
               <div className="map-picker-wrapper">
                 <TripMapPicker
-                  center={dropoffCoords ? { lat: dropoffCoords[0] || dropoffCoords.lat, lng: dropoffCoords[1] || dropoffCoords.lng } : null}
+                  center={dropoffCoords ? { lat: dropoffCoords[0] || dropoffCoords.lat, lng: dropoffCoords[1] || dropoffCoords.lng } : (currentLocationCoords || null)}
                   onLocationSelect={(lat, lng) => {
                     handleMapClick('dropoff', lat, lng)
                     setActiveMap(null)

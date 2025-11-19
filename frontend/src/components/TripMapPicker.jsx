@@ -37,6 +37,13 @@ function TripMapPicker({ center, onLocationSelect, label }) {
     center ? [center.lat, center.lng] : [20, 0]
   )
 
+  // Update marker position when center prop changes
+  useEffect(() => {
+    if (center) {
+      setMarkerPosition([center.lat, center.lng])
+    }
+  }, [center])
+
   const handleMapClick = (lat, lng) => {
     setMarkerPosition([lat, lng])
     if (onLocationSelect) {
@@ -87,10 +94,11 @@ function TripMapPicker({ center, onLocationSelect, label }) {
       <div className="leaflet-picker-wrapper">
         <MapContainer
           center={markerPosition}
-          zoom={markerPosition[0] === 20 && markerPosition[1] === 0 ? 2 : 6}
+          zoom={markerPosition[0] === 20 && markerPosition[1] === 0 ? 2 : (center ? 10 : 6)}
           style={{ height: '300px', width: '100%' }}
           minZoom={1}
           maxZoom={18}
+          key={`${markerPosition[0]}-${markerPosition[1]}`}
         >
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
